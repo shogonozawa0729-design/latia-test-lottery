@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>テスト抽選イベント（複数）｜架空チケット抽選（LivePocket型）</title><link rel="stylesheet" href="../../../assets/lab.css"></head>
+<body class="lp">
+<div class="test-banner" data-test-banner>架空・テスト用。これは架空のテスト用ページです。実在の店舗・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<header class="site-header"><a class="site-name" href="../../">架空チケット抽選</a><form class="header-search" method="get" action="#" onsubmit="return false"><input type="search" id="header-keyword" name="keyword" placeholder="イベントを探す"><input type="submit" name="commit" value="検索"></form><form class="header-state" method="get" action="#" onsubmit="return false"><input type="hidden" name="state_token" value="TEST" autocomplete="off"></form></header>
+<main class="container">
+  <h1>テスト抽選イベント（複数）</h1>
+  <section><p>架空の説明文です。この催しは存在しません。LATIA の誘引（スクロールと目印）を確認するためのページです。</p></section>
+  <section class="event-detail-section">
+    <h2>チケット</h2>
+    <ul class="ticket">
+      <li class="ticket__item js-toggle is-open">
+        <a href="" id="t1_tgl" class="ticket-head js-toggle-trigger" aria-controls="t1_pnl" aria-expanded="true" role="button">
+          <div><span class="tag">販売中</span></div>
+          <h3><span class="label-lottery">抽選</span> テスト抽選受付（東）</h3>
+          <dl><dt>販売受付期間</dt><dd>2027年1月1日(金) 12:00〜2027年1月3日(日) 23:59</dd></dl>
+        </a>
+        <div id="t1_pnl" class="ticket-body">
+          <dl><dt>結果発表予定日</dt><dd>2027年1月9日(土)</dd></dl>
+          <p>当選者購入期間の架空の説明です。</p>
+          <section class="ticket-card"><h4>テスト会場 東</h4><p><span>¥0</span>（税込）</p>
+            <button type="button" aria-expanded="false" class="more-toggle">続きを見る</button></section>
+          <div class="spacer" style="height:900px"></div>
+          <div class="ticket-body__button">
+            <a class="ticket-button" data-when="loggedout" href="../../login/?after_login_path=%2Fe%2Ftest-multi">ログイン／新規会員登録</a>
+            <a class="ticket-button" data-when="loggedin" href="receptions/1000002/tickets/">チケットを申し込む</a>
+          </div>
+        </div>
+      </li>
+      <li class="ticket__item js-toggle is-open">
+        <a href="" id="t2_tgl" class="ticket-head js-toggle-trigger" aria-controls="t2_pnl" aria-expanded="true" role="button">
+          <div><span class="tag">販売中</span></div>
+          <h3><span class="label-lottery">抽選</span> テスト抽選受付（西）</h3>
+          <dl><dt>販売受付期間</dt><dd>2027年1月1日(金) 12:00〜2027年1月3日(日) 23:59</dd></dl>
+        </a>
+        <div id="t2_pnl" class="ticket-body">
+          <dl><dt>結果発表予定日</dt><dd>2027年1月9日(土)</dd></dl>
+          <p>当選者購入期間の架空の説明です。</p>
+          <section class="ticket-card"><h4>テスト会場 西</h4><p><span>¥0</span>（税込）</p>
+            <button type="button" aria-expanded="false" class="more-toggle">続きを見る</button></section>
+          <div class="spacer" style="height:900px"></div>
+          <div class="ticket-body__button">
+            <a class="ticket-button" data-when="loggedout" href="../../login/?after_login_path=%2Fe%2Ftest-multi">ログイン／新規会員登録</a>
+            <a class="ticket-button" data-when="loggedin" href="receptions/1000003/tickets/">チケットを申し込む</a>
+          </div>
+        </div>
+      </li>
+      <li class="ticket__item js-toggle is-open">
+        <a href="" id="t3_tgl" class="ticket-head js-toggle-trigger" aria-controls="t3_pnl" aria-expanded="true" role="button">
+          <div><span class="tag tag--closed">受付終了</span></div>
+          <h3><span class="label-lottery">抽選</span> テスト抽選受付（南）</h3>
+          <dl><dt>販売受付期間</dt><dd>2027年1月1日(金) 12:00〜2027年1月3日(日) 23:59</dd></dl>
+        </a>
+        <div id="t3_pnl" class="ticket-body">
+          <dl><dt>結果発表予定日</dt><dd>2027年1月9日(土)</dd></dl>
+          <p>当選者購入期間の架空の説明です。</p>
+          <section class="ticket-card"><h4>テスト会場 南</h4><p><span>¥0</span>（税込）</p>
+            <button type="button" aria-expanded="false" class="more-toggle">続きを見る</button></section>
+          
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section><h2>関連イベント</h2><a href="../test-single/">応募する</a></section>
+</main>
+<script>
+(function () {
+  var P = new URLSearchParams(location.search);
+  try { if (P.get('login') === '1') sessionStorage.setItem('fakeLogin', '1'); } catch (e) {}
+  var loggedIn = false;
+  try { loggedIn = sessionStorage.getItem('fakeLogin') === '1'; } catch (e) {}
+  document.querySelectorAll('[data-when]').forEach(function (a) {
+    if (a.getAttribute('data-when') !== (loggedIn ? 'loggedin' : 'loggedout')) a.remove();
+  });
+  document.querySelectorAll('.js-toggle-trigger').forEach(function (t) {
+    t.addEventListener('click', function (e) {
+      e.preventDefault();
+      var li = t.closest('.js-toggle'); var open = !li.classList.contains('is-open');
+      li.classList.toggle('is-open', open); t.setAttribute('aria-expanded', String(open));
+    });
+  });
+  document.querySelectorAll('.more-toggle').forEach(function (b) {
+    b.addEventListener('click', function () { b.setAttribute('aria-expanded', String(b.getAttribute('aria-expanded') !== 'true')); });
+  });
+})();
+</script>
+<iframe class="aux-frame" srcdoc="" title="frame-1"></iframe><iframe class="aux-frame" srcdoc="" title="frame-2"></iframe>
+</body></html>

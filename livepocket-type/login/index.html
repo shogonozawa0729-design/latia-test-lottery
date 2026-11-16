@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>ログイン（架空）｜架空チケット抽選（LivePocket型）</title><link rel="stylesheet" href="../../assets/lab.css"></head>
+<body class="lp">
+<div class="test-banner" data-test-banner>架空・テスト用。これは架空のテスト用ページです。実在の店舗・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<header class="site-header site-header--plain"><a class="site-name" href="../">架空チケット抽選</a></header>
+<main class="container">
+  <h1>ログイン（架空）</h1>
+  <p>このページに入力欄はありません。下のボタンでログイン済みの状態になります。</p>
+  <a class="button" id="fake-login" href="../e/test-single/">テスト用ログインで進む</a>
+</main>
+<script>
+(function () {
+  var allowed = { '/e/test-single': '../e/test-single/', '/e/test-multi': '../e/test-multi/' };
+  var a = document.getElementById('fake-login');
+  var back = new URLSearchParams(location.search).get('after_login_path');
+  if (back && Object.prototype.hasOwnProperty.call(allowed, back)) a.setAttribute('href', allowed[back]);
+  a.addEventListener('click', function () { try { sessionStorage.setItem('fakeLogin', '1'); } catch (e) {} });
+})();
+</script>
+</body></html>

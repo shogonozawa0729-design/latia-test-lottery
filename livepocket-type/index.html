@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>架空チケット抽選（LivePocket型）</title><link rel="stylesheet" href="../assets/lab.css"></head>
+<body class="lp">
+<div class="test-banner" data-test-banner>架空・テスト用。これは架空のテスト用ページです。実在の店舗・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<header class="site-header site-header--plain"><span class="site-name">架空チケット抽選</span></header>
+<main class="container">
+  <h1>架空チケット抽選（LivePocket型）</h1>
+  <p>LATIA 動作確認用の架空サイトです。イベント → チケット選択 → 申込内容確認 → 完了 の流れを、構造だけ再現しています（実在のサービスの見た目・名称は使っていません）。</p>
+  <section class="scenario-list"><h2>シナリオ</h2><ul>
+    <li><a href="e/test-single/">イベント（抽選 1 件・ログイン前から）</a></li>
+    <li><a href="e/test-single/?login=1">イベント（抽選 1 件・最初からログイン後）</a></li>
+    <li><a href="e/test-multi/">イベント（抽選 3 件・うち 1 件は受付終了）</a></li>
+    <li><a href="e/test-single/receptions/1000001/tickets/">チケット選択（カード 1 枚）から</a></li>
+    <li><a href="e/test-multi/receptions/1000002/tickets/">チケット選択（カード 3 枚）から</a></li>
+    <li><a href="purchase/confirm/?id=0000000&amp;reserve_id=00000000">申込内容確認（Q1 あり・フォロー未チェック）から</a></li>
+    <li><a href="purchase/confirm/?id=0000000&amp;reserve_id=00000000&amp;q=0">申込内容確認（Q1 なし）から</a></li>
+    <li><a href="purchase/confirm/?id=0000000&amp;reserve_id=00000000&amp;follow=1">申込内容確認（フォロー最初からチェック済み）から</a></li>
+    <li><a href="purchase/confirm/?id=0000000&amp;reserve_id=00000000&amp;fail=1">申込内容確認（1 回目の送信だけ行き止まりへ・戻って再送信で完了）</a></li>
+    <li><a href="e/test-single/receptions/1000001/tickets/?relay=slow">中継ページを 1.5 秒見せる（relay=slow）</a></li>
+  </ul></section>
+  <p><a class="button button--secondary" href="?reset=1">架空ログイン状態・失敗フラグをリセット</a></p>
+  <p class="note">ログイン状態は sessionStorage の fakeLogin、失敗の再現は fakeFail のフラグだけを使います。入力値は保存しません。</p>
+  <p><a href="../">トップへ戻る</a></p>
+</main>
+<script>(function(){if(new URLSearchParams(location.search).get('reset')==='1'){try{sessionStorage.removeItem('fakeLogin');sessionStorage.removeItem('fakeFail');}catch(e){}}})();</script>
+</body></html>

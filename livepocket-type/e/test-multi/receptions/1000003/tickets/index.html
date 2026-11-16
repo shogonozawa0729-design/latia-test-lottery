@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>チケット選択｜架空チケット抽選（LivePocket型）</title><link rel="stylesheet" href="../../../../../../assets/lab.css"></head>
+<body class="lp">
+<div class="test-banner" data-test-banner>架空・テスト用。これは架空のテスト用ページです。実在の店舗・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<header class="site-header"><a class="site-name" href="../../../../../">架空チケット抽選</a><form class="header-search" method="get" action="#" onsubmit="return false"><input type="search" id="header-keyword" name="keyword" placeholder="イベントを探す"><input type="submit" name="commit" value="検索"></form><form class="header-state" method="get" action="#" onsubmit="return false"><input type="hidden" name="state_token" value="TEST" autocomplete="off"></form></header>
+<main class="container">
+  <h1>チケット選択</h1>
+  <form class="ticket-detail" id="ticket-form" method="get" action="../select_seat/" data-fake-submit>
+    <input type="hidden" name="state_token" value="TEST" autocomplete="off">
+    <div class="ticket-card-wrap">
+      <section class="ticket-card">
+        <div class="ticket-card__block">
+          <h3 class="ticket-card__title">テスト会場 西 11:00入場</h3>
+          <div class="ticket-card__input">
+            <label for="ticket_5000005">購入枚数</label>
+            <div class="input-select input-select--small">
+              <select id="ticket_5000005" name="tickets[5000005]">
+                <option value="0">0</option><option value="1">1</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <button type="submit" class="button button--primary" disabled>チケットを申込む</button>
+  </form>
+</main>
+<script>(function(){var P=new URLSearchParams(location.search),f=document.getElementById("ticket-form");["relay","q","follow","fail"].forEach(function(k){var v=P.get(k);if(v===null||!/^[a-z0-9]{1,8}$/.test(v))return;var i=document.createElement("input");i.type="hidden";i.name=k;i.value=v;i.setAttribute("data-keep","");f.appendChild(i);});})();</script>
+<script>
+(function () {
+  var form = document.getElementById('ticket-form');
+  var sels = [].slice.call(form.querySelectorAll('select'));
+  var btn = form.querySelector('button[type=submit]');
+  function update() {
+    var chosen = null;
+    sels.forEach(function (s) { if (!chosen && s.value !== '0') chosen = s; });
+    btn.disabled = !chosen;
+    sels.forEach(function (s) { s.disabled = !!chosen && s !== chosen; });
+  }
+  sels.forEach(function (s) { s.addEventListener('change', update); });
+  addEventListener('pageshow', update);
+  form.addEventListener('submit', function (e) {
+    if (!sels.some(function (s) { return s.value !== '0'; })) e.preventDefault();
+  });
+})();
+</script>
+<script>
+(function () {
+  document.querySelectorAll('form[data-fake-submit]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      if (e.defaultPrevented) return;
+      form.querySelectorAll('[name]:not([data-keep])').forEach(function (n) {
+        n.dataset.name = n.getAttribute('name'); n.removeAttribute('name');
+      });
+    });
+  });
+  addEventListener('pageshow', function () {
+    document.querySelectorAll('[data-name]').forEach(function (n) {
+      n.setAttribute('name', n.dataset.name); delete n.dataset.name;
+    });
+  });
+})();
+</script>
+<iframe class="aux-frame" srcdoc="" title="frame-1"></iframe>
+</body></html>

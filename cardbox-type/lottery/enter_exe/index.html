@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>処理中</title><link rel="stylesheet" href="../../../assets/lab.css"></head><body class="relay">
+<div class="test-banner" data-test-banner>架空・テスト用。これは架空のテスト用ページです。実在の店舗・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<p class="relay-note">処理中です…</p>
+<form id="relay" method="get" action="../entry_confirm/"><input type="hidden" name="code" value="TEST01"></form>
+<script>(function(){var f=document.getElementById("relay"),P=new URLSearchParams(location.search);[].forEach(function(k){var v=P.get(k);if(v===null||!/^[a-z0-9]{1,8}$/.test(v))return;var i=document.createElement("input");i.type="hidden";i.name=k;i.value=v;f.appendChild(i);});if(P.get("next")==="complete"){f.setAttribute("action","../entry_complete/");}if(P.get("relay")==="slow"){setTimeout(function(){f.submit();},1500);}else{f.submit();}})();</script>
+</body></html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>チケット購入｜架空チケット抽選（LivePocket型）</title><link rel="stylesheet" href="../../assets/lab.css"></head>
+<body class="lp">
+<div class="test-banner" data-test-banner>架空・テスト用。これは架空のテスト用ページです。実在の店舗・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<div id="l8-header"><header class="site-header site-header--plain"><a class="site-name" href="../">架空チケット抽選</a></header></div>
+<main class="container">
+  <h1>チケット購入</h1>
+  <p>送信がうまくいかなかった場合の行き止まりを再現した架空ページです。ブラウザの「戻る」で申込内容確認に戻り、もう一度「チケットを申込む」を押してください（2 回目は完了まで進みます）。</p>
+</main>
+<script>
+(function () {
+  var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || {};
+  if (nav.type === 'reload') {
+    document.getElementById('l8-header').innerHTML = "<header class=\"site-header\"><a class=\"site-name\" href=\"../\">架空チケット抽選</a><form class=\"header-search\" method=\"get\" action=\"#\" onsubmit=\"return false\"><input type=\"search\" id=\"header-keyword\" name=\"keyword\" placeholder=\"イベントを探す\"><input type=\"submit\" name=\"commit\" value=\"検索\"></form><form class=\"header-state\" method=\"get\" action=\"#\" onsubmit=\"return false\"><input type=\"hidden\" name=\"state_token\" value=\"TEST\" autocomplete=\"off\"></form></header>\n";
+  }
+})();
+</script>
+</body></html>

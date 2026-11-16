@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>架空フォーム抽選（Googleフォーム型）</title><link rel="stylesheet" href="../assets/lab.css"></head>
+<body class="gf">
+<div class="test-banner" data-test-banner>架空・テスト用。これは架空のテスト用ページです。実在の店舗・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<header class="site-header site-header--plain"><span class="site-name">架空フォーム抽選</span></header>
+<main class="container">
+  <h1>架空フォーム抽選（Googleフォーム型）</h1>
+  <p>LATIA 動作確認用の架空フォームです。構造（独自チェックボックス・aria の結び付け・hidden の並び）だけを再現しています。実在のサービスの見た目・名称は使っていません。</p>
+  <section class="scenario-list"><h2>シナリオ</h2><ul>
+    <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/">商品 1 個（p=single・既定）</a></li>
+    <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/?p=multi">商品 3 個・上限の記載なし（p=multi）</a></li>
+    <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/?p=cap">商品 3 個・「1つまで」（p=cap）</a></li>
+    <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/?p=radio">商品をラジオ 3 個で（p=radio）</a></li>
+    <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/?p=other">商品 2 個＋「その他」自由記述（p=other）</a></li>
+    <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/?signin=0">メール記録ブロックをログアウト状態に（signin=0）</a></li>
+  </ul></section>
+  <section class="scenario-list"><h2>汎用ロジック確認用（実サイトの再現ではありません）</h2>
+    <p class="note">native=1 は、独自チェックボックスを本物の &lt;input type="checkbox"&gt;（label で包む）に、段落欄から jscontroller を外し、文字入力の「状態からの描き直し」をやめた版です。実在のフォームの構造ではありません。</p>
+    <ul>
+      <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/?native=1">native=1・商品 1 個</a></li>
+      <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/?native=1&amp;p=multi">native=1・商品 3 個</a></li>
+      <li><a href="forms/d/e/1FAIpQLSdTESTtestTESTtestTESTtestTESTtestTESTtestTESTtest00/viewform/?native=1&amp;p=radio">native=1・ラジオ</a></li>
+    </ul></section>
+  <p><a href="../">トップへ戻る</a></p>
+</main>
+</body></html>

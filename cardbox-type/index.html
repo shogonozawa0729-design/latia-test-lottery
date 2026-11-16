@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>架空カードショップ抽選（カードボックス型）</title><link rel="stylesheet" href="../assets/lab.css"></head>
+<body class="cb">
+<div class="test-banner" data-test-banner>架空・テスト用。これは架空のテスト用ページです。実在の店舗・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<header class="site-header site-header--plain"><span class="site-name">架空カードショップ抽選</span></header>
+<main class="container">
+  <h1>架空カードショップ抽選（カードボックス型）</h1>
+  <p>LATIA 動作確認用の架空の抽選です。応募フォーム → 中継 → 完了（抽選番号・画面 URL の二次元コード）の流れを、構造だけ再現しています。実在の店舗・サービスの見た目・名称は使っていません。</p>
+  <section class="scenario-list"><h2>応募フォーム（広告の動き）</h2><ul>
+    <li><a href="lottery/entry/?code=TEST01">既定（ad=dom：スクロール中だけ広告枠の中身を入れ替え）</a></li>
+    <li><a href="lottery/entry/?code=TEST01&amp;ad=style">ad=style（広告枠の class だけ切り替え）</a></li>
+    <li><a href="lottery/entry/?code=TEST01&amp;ad=afterinput">ad=afterinput（最初の入力の 20ms 後に 1 回だけ入れ替え）</a></li>
+    <li><a href="lottery/entry/?code=TEST01&amp;ad=storm">ad=storm（200ms ごとに入れ替え続ける）</a></li>
+    <li><a href="lottery/entry/?code=TEST01&amp;ad=off">ad=off（何もしない）</a></li>
+  </ul></section>
+  <section class="scenario-list"><h2>その他の変種</h2><ul>
+    <li><a href="lottery/entry/?code=TEST01&amp;aframe=0">aframe=0（隠れた補助フレームを追加しない・外部読み込みなし）</a></li>
+    <li><a href="lottery/entry/?code=TEST01&amp;aframe=visible">aframe=visible（同じ src の 300×80 表示フレーム）</a></li>
+    <li><a href="lottery/entry/?code=TEST01&amp;item=2">item=2（応募する項目が 2 個）</a></li>
+    <li><a href="lottery/entry/?code=TEST01&amp;relay=slow">relay=slow（中継ページを 1.5 秒見せる）</a></li>
+  </ul></section>
+  <section class="scenario-list"><h2>アプリを変えない完了確認用（実サイトの再現ではありません）</h2>
+    <p class="note">完了ページを <code>/lottery/entry_complete/</code>（form なし・入力欄なし）にした別シナリオです。実在のサイトの完了 URL・構造ではありません。</p>
+    <ul><li><a href="lottery/entry/?code=TEST01&amp;next=complete">entry_complete に着くシナリオ</a></li></ul>
+  </section>
+  <p class="note">既定では応募フォームの読み込み約 1 秒後に、表示されない補助フレーム（www.google.com の reCAPTCHA aframe）を 1 個追加します。入力値は渡りません。</p>
+  <p><a href="../">トップへ戻る</a></p>
+</main>
+</body></html>
