@@ -1,0 +1,12 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><link rel="stylesheet" href="style.css"><title>応募完了｜テスト抽選堂（架空）</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script></head><body><div class="wrap"><div class="banner"><b>架空・テスト用ページ</b>：LATIA 開発用の架空の抽選です。実在の店舗・商品・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<div class="steps"><span>① 入力</span><span>② 確認</span><b>③ 完了</b></div>
+<div class="card"><h1>応募完了</h1><div class="info" role="status">応募を完了しました。</div></div>
+<div class="card"><h2>【テスト本店】テスト用拡張パック 1BOX 抽選（架空）</h2>
+<div class="number"><span>抽選番号</span><div id="no">----</div></div>
+<p style="text-align:center;margin:0">この画面のURL（QRコード）</p><div id="qr"></div>
+<p style="font-size:13px;opacity:.7">抽選番号・応募内容の備忘録に、この画面を保存してください（テスト用）。</p></div>
+<script>
+var no=String(Math.floor(1000+Math.random()*9000));document.getElementById('no').textContent=no;
+try{var q=qrcode(0,'M');q.addData(location.origin+location.pathname+'#no='+no);q.make();document.getElementById('qr').innerHTML=q.createSvgTag({cellSize:4,margin:2});}catch(e){document.getElementById('qr').textContent='QRコードを表示できませんでした';}
+</script></div></body></html>

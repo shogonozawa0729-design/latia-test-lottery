@@ -1,0 +1,15 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><link rel="stylesheet" href="style.css"><title>応募フォーム｜テスト抽選堂（架空）</title></head><body><div class="wrap"><div class="banner"><b>架空・テスト用ページ</b>：LATIA 開発用の架空の抽選です。実在の店舗・商品・抽選ではありません。入力内容はどこにも送信・保存されません。</div>
+<div class="steps"><b>① 入力</b><span>② 確認</span><span>③ 完了</span></div>
+<form class="card" id="entry" action="confirm.html" method="get"><h2>応募フォーム</h2>
+<label for="family">姓<span class="req">必須</span></label><input id="family" name="family" type="text" autocomplete="family-name" required>
+<label for="given">名<span class="req">必須</span></label><input id="given" name="given" type="text" autocomplete="given-name" required>
+<label for="tel">電話番号（ハイフンなし）<span class="req">必須</span></label><input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="numeric" required>
+<label for="email">メールアドレス<span class="req">必須</span></label><input id="email" name="email" type="email" autocomplete="email" required>
+<label>応募する商品<span class="req">必須</span></label><label class="check"><input type="checkbox" name="item" value="box" required>テスト用拡張パック 1BOX（架空）</label>
+<label>確認事項<span class="req">必須</span></label><label class="check"><input type="checkbox" name="agree" value="1" required>架空のテスト用抽選であることを理解しました</label>
+<button class="btn" type="submit">確認画面へ</button></form>
+<script>
+// No value ever leaves this page: names are removed before the GET navigation,
+// so the next URL carries no query and nothing is stored or sent anywhere.
+document.getElementById('entry').addEventListener('submit',function(){this.querySelectorAll('[name]').forEach(function(e){e.removeAttribute('name')})});
+</script></div></body></html>
